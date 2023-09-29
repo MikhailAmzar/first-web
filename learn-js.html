@@ -3,62 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn js</title>
+    <title>Document</title>
 </head>
 <body>
+    <button id="pressMeBtn">Press me!</button>
+    <div id="greetUser"></div>
     <script>
-        console.log("Hello, World!")
+        // Template literal uses ` ` and ${} to wrap variables in another variable.
+        const name = "Chris";
+        const greeting = `Hello, ${name}`;
+        console.log(greeting);
 
-        let hello = 'Hello world';
-        let message;
-        message = hello;
-        console.log(message);
-        console.log(hello);
+        const word_1 = "Wagwan ";
+        const word_2 = "my G?";
+        const greeting_2 = `${word_1}${word_2}`;
+        console.log(greeting_2);
         
-        let $ = 1;
-        let _ = 2;
-        console.log($ + _);
+        //Prompt ask user name after click button, User can input name and enter. Page display greeting with user name.
+        const buttonVar = document.querySelector("#pressMeBtn");
 
-        yolo = "Hello yolo";
-        console.log(yolo);
-        // no "use strict" so boleh declare without defining variable.
+        function greetEvent(){
+            let userName = prompt("What is your name?");
+            let greeting = document.querySelector("#greetUser");
+            greeting.textContent = `What's up ${userName}, nice to meet you!`;
+        }
 
-        const COLOR_RED = "#F00";
-        const COLOR_BLUE = "0F0";
-        const COLOR_ORANGE = "#FF7F00";
+        buttonVar.addEventListener("click", greetEvent);
 
-        let color = COLOR_ORANGE;
-        console.log(color);
+        const multiString_1 = `Testing my breaks
+        Testing my breaks?
+        Testing again?`;
+        const multiString_2 = "Maybe Maybe\nMaybe\nMaybe?";
+        console.log(multiString_1);
+        console.log(multiString_2);
 
-        //^ constant var known before runtime
+        const bigmouth = 'I\'ve got no right to take my place…';
+        console.log(bigmouth);
 
-        // const pageLoadTime = /*time taken page to load*/ ;
+        const myString = "123";
+        const myNum = Number(myString);
+        console.log(typeof myNum);
 
-        let admin
-        , name = "John";
+        const stringMethod = "CounterStrikeGO";
+        console.log(stringMethod);
+        console.log(stringMethod.length);
+        console.log(stringMethod.slice(4));
+        console.log(stringMethod.substring(0,7));
+        console.log(stringMethod.substr(2,9));
 
-        admin = name;
-        // alert(admin);
+        let text = "Please buy Samsung!"
+        , newText = text.replace("Samsung","Apple");
+        console.log(newText);
+        let text_2 = "Please buy Samsung and Samsung!"
+        , newText_2 = text_2.replace(/Samsung/g,"Apple");
+        console.log(newText_2);
 
-        let planetEarth;
-        let currentUser;
+        console.log(text.toUpperCase());
+        console.log(text_2.toLowerCase());
+        console.log(stringMethod.padEnd(20,"*"))
 
-        let x = 5;
-        let y = 2;
-        console.log(x%y);
-        console.log(x**2);
-        console.log(Math.pow(x,2));
+        let numb = 5;
+        let padded = (numb.toString()).padStart(4,"0");
+        console.log(padded);
 
-        console.log(100+50 *3);
-        console.log(1234e5);
-        console.log(0.2+0.1);
-        console.log((0.2*10 + 0.1*10) / 10);
-        console.log(10 + "fomo");
-        
-        let b = 10;
-        let a = 20;
-        let z = "The result is: " + a + b;
-        console.log(z);
+        console.log(text.charCodeAt(1));
+        console.log(text.charAt(11));
+        console.log(text.anchor("Wumbo") );
+        //^ 26 Sept        
+
+        console.log(text.length);
     </script>
 </body>
 </html>
