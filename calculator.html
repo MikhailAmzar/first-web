@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        .container-row{
+            display: flex;
+            border: 2px solid red;
+            margin: 10px auto;
+            justify-content: center;
+        }
+
+        .container-row > button{
+            color: white;
+            background-color: rgb(76, 118, 209);
+            padding: 20px;
+            margin: 0 12px;
+            font-size: 30px;
+            border: 0;
+            width: 90px;
+            border-radius:30px;
+            cursor: pointer;
+        }
+
+        .btn-operator{
+            color: white;
+            background-color: rgb(76, 118, 209);
+            padding: 20px;
+            margin: 0 12px;
+            font-size: 10px;
+            border: 0;
+            width: 90px;
+            border-radius:30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-row">
+        <button onclick="
+        calculation += '1';
+        console.log(calculation);
+        ">1</button>
+
+        <button onclick="
+        calculation += '2';
+        console.log(calculation);
+        ">2</button>
+
+        <button onclick="
+        calculation += '3';
+        console.log(calculation);
+        ">3</button>
+    </div>
+    <div class="container-row">
+        <button onclick="
+        calculation += '4';
+        console.log(calculation);
+        ">4</button>
+
+        <button onclick="
+        calculation += '5';
+        console.log(calculation);
+        ">5</button>
+           
+        <button onclick="
+        calculation += '6';
+        console.log(calculation);
+        ">6</button>
+    </div>
+    <div class="container-row">
+        <button onclick="
+        calculation += '7';
+        console.log(calculation);
+        ">7</button>
+
+        <button onclick="
+        calculation += '8';
+        console.log(calculation);
+        ">8</button>
+
+        <button onclick="
+        calculation += '9';
+        console.log(calculation);
+        ">9</button>
+    </div>
+    <div class="container-row">
+        <button onclick="
+        calculation += '0';
+        console.log(calculation);
+        ">0</button>
+
+    </div>
+    <div class="container-row">
+    <button class="btn-operator">+</button> 
+    <button class="btn-operator">-</button> 
+    <button class="btn-operator">*</button> 
+    <button class="btn-operator">/</button> 
+    <button class="btn-operator">=</button>
+    <button class="btn-operator">CLEAR</button>
+    </div>
+    <script>
+        let calculation = '';
+
+    </script>
+</body>
+</html>
