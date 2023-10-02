@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // const product = {
+        //     name: 'socks',
+        //     price: 1090
+        // };
+
+        // console.log(product);
+        // console.log(product.name); //dot notation
+        // console.log(product.price); //dot notation
+        // product.name = 'cotton socks';
+        // console.log(product.name);
+        // product.newProperty = true; // add new property into object
+        // console.log(product);
+
+        // delete product.newProperty; //delete property in object
+        // console.log(product);
+        // console.log(typeof product);
+        //------------------------------------------------------
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': '1 day',
+            rating: {
+                stars: 4.5,
+                count: 87
+                //this is a nested object.
+            },
+            fun: function function1(){
+                console.log('function inside object');
+                //method inside object
+            } 
+        }
+
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']); //bracket notation does the same thing like dot notation, kinda
+
+        //console.log(product2.delivery-time;) //this work  bcs of - operator. so we can use bracket notation to overcome this
+
+        console.log(product2['delivery-time']);
+        console.log(product2.rating.count);
+        product2.fun(); // call function inside object
+
+        console.log(typeof console); // console is also an object, with log() as one of its methods
+        //-------------------------------------------------------
+        //JSON objects
+
+        console.log(JSON.stringify(product2));
+        console.log(typeof JSON.stringify(product2));
+    </script>
+</body>
+</html>

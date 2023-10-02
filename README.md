@@ -1,1 +1,1 @@
-First project for The Odin Project's Foundation Chapter.
+Sandbox to store practices and notes learning JS.
