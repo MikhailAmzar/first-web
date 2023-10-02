@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hello</button>
+    <button class="btn-2">Second button</button>
+
+    <script>
+        // document.body.innerHTML = 'Inner HTML displayed';
+        // //document = built in object juga
+
+        // document.title = 'Good Job (DOM)';
+        
+        // console.log(document.title);
+        // document.title = 'DOM back';
+
+        // console.log(document.body);
+        // console.log(typeof document.body);
+
+        // console.log(document.body.innerHTML)
+        // document.body.innerHTML = 'Change again';
+        // document.body.innerHTML = '<button>Good Job!</button>';
+
+        document.querySelector('button');
+        console.log(document.querySelector('button'));
+        document.querySelector('button').innerHTML = 'Changed';
+
+        document.querySelector('.btn-2').innerHTML = 'Changed second button';
+
+        const buttonElement = document.querySelector('.btn-2');
+        console.log(buttonElement);
+
+    </script>
+</body>
+</html>

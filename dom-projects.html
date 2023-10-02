@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM projects</title>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subscribe();" class="js-sub-button">Subscribe</button>
+
+    <br><br>
+
+    <p>Rock Paper Scissor with DOM</p>
+    <a href="rock-paper-scissor-DOM.html">Click here</a>
+
+    <br><br>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order more than $40 will be charged $10 for shipping!</p>
+    <input 
+    placeholder="Enter total price" 
+    onkeydown="handleCostKeydown(event);" 
+    class="js-cost-input">
+
+    <button onclick="calcShipping();">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+
+        // window.console.log('window');
+        // window.alert('lol');
+
+
+        //Function to change button subscribe text when clicked. Can also put in onclick in html but can be kinda messy.
+        function subscribe(){
+            const buttonElement = document.querySelector('.js-sub-button');
+            
+            if (buttonElement.innerHTML === 'Subscribe'){
+                buttonElement.innerHTML = 'Subscribed';
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+            };
+        }
+
+        function calcShipping(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value); // use Number() because balue from DOM is string
+            if (cost < 40){
+                cost += 10;
+            }
+            
+            document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        }
+        
+        function handleCostKeydown(event){
+            console.log(event.key);
+            if (event.key ==='Enter'){
+                calcShipping();
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor Score</title>
+    <title>Rock Paper Scissor DOM</title>
     <style>
         body {
             box-sizing: border-box;
-            background-color: rgb(48, 48, 48);
+            background-color: rgb(23, 22, 63);
         }
 
         p{
@@ -32,8 +32,8 @@
     </style>
 </head>
 <body>
-    <p>Rock Paper Scissor with Score save</p>
-    <p>- Using objects and localStorage</p>
+    <p>Rock Paper Scissor with Score save & DOM</p>
+
     <div class="rps-container">
         
         <button onclick="
@@ -52,34 +52,30 @@
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
-        localStorage.removeItem('score')">
+        localStorage.removeItem('score');
+        updateScoreElement();">
             Reset Score
         </button>
 
     </div>
-    <script>
-        //this const declaration is the initial one before we use localStorage to store score,
-        // const score = {
-        //     wins: 0,
-        //     losses: 0,
-        //     ties: 0
-        // };
 
-        //this const score will now always use the value from localStorage so everytime you refresh the page the score will always be updated from previous run. JSON parse to revert string from localStorage to js pbject
+    <p class="js-result"></p>
+    <p class="js-move"></p>
+    <div class="rps-container">
+        <p class="js-score"></p>
+    </div>
+
+
+    <script>
+        
         let score = JSON.parse(localStorage.getItem('score')) || {
             wins: 0,
             losses:0,
             ties: 0
         };
-            
-        // if(!score){ // same as checking if score === null
-        //     score = {
-        //         wins: 0,
-        //         losses: 0,
-        //         ties: 0
-        //     };
-        // }
 
+        updateScoreElement();
+            
         //console log the score saved by localStorage
         console.log(localStorage.getItem('score'));
 
@@ -123,9 +119,17 @@
             
             //saving score into localStorage item 'score', but first - localStorage only accepts string so we use JSON.stringify() method to convert var to string
             localStorage.setItem('score',JSON.stringify(score));
-             
-        alert(`You picked ${playerMove}. Computer picked ${compMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+
+        updateScoreElement();
+
+        document.querySelector('.js-result').innerHTML = result;
+        document.querySelector('.js-move').innerHTML = `You ${playerMove} - ${compMove} Computer`;
+
+        }
+
+        function updateScoreElement(){
+            document.querySelector('.js-score')
+        .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
         }
 
        function pickCompMove(){
@@ -141,7 +145,6 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         } else if (randomNumber >= 2/3 && randomNumber < 1){
             compMoveF = 'scissor';
         }
-
         return compMoveF;
        } 
 
